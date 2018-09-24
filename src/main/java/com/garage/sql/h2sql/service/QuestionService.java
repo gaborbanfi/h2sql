@@ -15,6 +15,10 @@ public class QuestionService {
     }
 
     public Answer getTheOnlyAnswer(String question) {
-        return questionDao.getTheOnlyAnswer(question);
+        return questionDao.getTheOnlyAnswer(question, true);
+    }
+
+    public Answer getTheOnlyAnswer(String question, boolean indexed) {
+        return questionDao.getTheOnlyAnswer(question, indexed);
     }
 }
