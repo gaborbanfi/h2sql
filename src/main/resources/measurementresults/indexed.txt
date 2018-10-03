@@ -1,0 +1,17 @@
+{
+	"name": "ANSWER_QUERY",
+	"description": null,
+	"baseUnit": "milliseconds",
+	"measurements": [{
+			"statistic": "COUNT",
+			"value": 4000.0
+		}, {
+			"statistic": "TOTAL_TIME",
+			"value": 3296.535413
+		}, {
+			"statistic": "MAX",
+			"value": 34.807426
+		}
+	],
+	"availableTags": []
+}
