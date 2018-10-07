@@ -16,20 +16,20 @@ public class MeasureController {
         this.measureService = measureService;
     }
 
-    @GetMapping("/measure")
-    public ResponseEntity answerMe() {
+    @GetMapping("/measure/{question}")
+    public ResponseEntity answerMe(String question) {
         try {
-            measureService.measureIndexedQuery();
+            measureService.measureIndexedQuery(question);
         } catch (Exception e) {
             return new ResponseEntity(HttpStatus.SERVICE_UNAVAILABLE);
         }
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @GetMapping("/measure/slow")
-    public ResponseEntity answerMeSlowly() {
+    @GetMapping("/slowmeasure/{question}")
+    public ResponseEntity answerMeSlowly(String question) {
         try {
-            measureService.measureNonIndexedQuery();
+            measureService.measureNonIndexedQuery(question);
         } catch (Exception e) {
             return new ResponseEntity(HttpStatus.SERVICE_UNAVAILABLE);
         }

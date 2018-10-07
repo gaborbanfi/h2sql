@@ -4,13 +4,13 @@
 	"baseUnit": "milliseconds",
 	"measurements": [{
 			"statistic": "COUNT",
-			"value": 4000.0
+			"value": 9999.0
 		}, {
 			"statistic": "TOTAL_TIME",
-			"value": 3296.535413
+			"value": 5386.141984
 		}, {
 			"statistic": "MAX",
-			"value": 34.807426
+			"value": 16.714304
 		}
 	],
 	"availableTags": []

@@ -10,11 +10,11 @@ import org.springframework.context.annotation.Configuration;
 @Aspect
 @Configuration
 public class QuestionAspect {
-    private final static Logger logger = LoggerFactory.getLogger(QuestionAspect.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(QuestionAspect.class);
 
-    @After("execution(* com.garage.sql.h2sql.dao.QuestionDao.*(..))")
+    @After("execution(* com.garage.sql.h2sql.dao.QuestionDao.get*(..))")
     public void afterQuestioning(JoinPoint joinPoint){
-        logger.info("Another foolish hooman asked thy whether {}", encode(joinPoint.getArgs()[0]));
+        LOGGER.info("Another foolish hooman asked thy whether {}", encode(joinPoint.getArgs()[0]));
     }
 
     private String encode(Object message) {

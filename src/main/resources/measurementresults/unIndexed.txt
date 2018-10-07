@@ -1,16 +1,16 @@
 {
-	"name": "ANSWER_QUERY",
+	"name": "ANSWER_SLOW_QUERY",
 	"description": null,
 	"baseUnit": "milliseconds",
 	"measurements": [{
 			"statistic": "COUNT",
-			"value": 2024.0
+			"value": 8027.0
 		}, {
 			"statistic": "TOTAL_TIME",
-			"value": 2401.092936
+			"value": 2.1804934412613E7
 		}, {
 			"statistic": "MAX",
-			"value": 38.509104
+			"value": 0.0
 		}
 	],
 	"availableTags": []

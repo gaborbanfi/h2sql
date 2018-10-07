@@ -36,4 +36,12 @@ public class QuestionDao {
 
         return answers.get(0);
     }
+
+    public void insertAnswer(String question, String answer) {
+        jdbcTemplate.update("insert into answers(question, answer) values (?, ?)", question, answer);
+    }
+
+    public void insertAnswerIntoSlow(String question, String answer) {
+        jdbcTemplate.update("insert into answersSlow(question, answer) values (?, ?)", question, answer);
+    }
 }

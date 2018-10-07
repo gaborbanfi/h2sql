@@ -8,19 +8,21 @@ import org.springframework.stereotype.Service;
 @Service
 public class MeasureService {
     private final QuestionService questionService;
-    private final Timer answerQuery;
+    private final Timer answerTimer;
+    private final Timer answerTimerSlow;
 
     @Autowired
     public MeasureService(QuestionService questionService, MeterRegistry meterRegistry) {
         this.questionService = questionService;
-        answerQuery = meterRegistry.timer("ANSWER_QUERY");
+        answerTimer = meterRegistry.timer("ANSWER_QUERY");
+        answerTimerSlow = meterRegistry.timer("ANSWER_SLOW_QUERY");
     }
 
-    public void measureNonIndexedQuery() {
-        answerQuery.record(() -> questionService.getTheOnlyAnswer("2*2", false));
+    public void measureNonIndexedQuery(String question) {
+        answerTimerSlow.record(() -> questionService.getTheOnlyAnswer(question, false));
     }
 
-    public void measureIndexedQuery() {
-        answerQuery.record(() -> questionService.getTheOnlyAnswer("2*2", true));
+    public void measureIndexedQuery(String question) {
+        answerTimer.record(() -> questionService.getTheOnlyAnswer(question, true));
     }
 }
